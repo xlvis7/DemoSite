@@ -1,4 +1,5 @@
 function main(){
+    $('#mainLoader').attr('style', 'opacity: 0; display: none;');
     var counter = $('#mainApp').attr('data-step');
 
     function changePicture() {
@@ -6,7 +7,7 @@ function main(){
             counter > 11 ? counter = 1 : counter = counter;
             $('#mainApp').attr('data-step', counter);
     }
-
+    
     var timer = setInterval(changePicture, 5000);
 
     $('.visual-nav-col').click(function(){
@@ -17,4 +18,5 @@ function main(){
     });
 }
 
+$('#mainLoader').attr('style', '');
 window.onload = main;
